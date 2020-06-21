@@ -1,0 +1,12 @@
+h1 {
+    font-size: 30px;
+}
+.mangas-destacados .card{
+    height: 100%;
+   
+}
+
+.manga-destacados .card img{
+ height: auto;
+ object-fit: cover;
+}
