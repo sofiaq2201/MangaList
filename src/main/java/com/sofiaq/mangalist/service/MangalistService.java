@@ -19,8 +19,15 @@ public class MangalistService {
     
     
     public List<Manga> buscarDestacados(){
-        List<Manga> destacados = mangaRepository.findAll();
-        System.out.print(destacados);
+        List<Manga> destacados = mangaRepository.buscarTodos();
         return  destacados;
+    }
+    
+    public List<Manga> buscarPorAutor(int autorId){
+        return mangaRepository.buscarPorAutor(autorId);
+    }
+    
+    public List<Manga> buscador (String consulta){
+        return mangaRepository.findByNombreContaining(consulta);
     }
 }
