@@ -10,13 +10,10 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Manga {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    //@Column(name= "nombre")
     private String nombre;
-    //@Column(name= "descripcion")
     private String descripcion;
-    //@Column(name= "imagen_url")
     private String imagenUrl;
     @ManyToOne
     private Autor autor;
@@ -59,6 +56,11 @@ public class Manga {
 
     public void setAutor(Autor autor) {
         this.autor = autor;
+    }
+
+    @Override
+    public String toString() {
+        return "Manga{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagenUrl=" + imagenUrl + ", autor=" + autor + '}';
     }
     
     

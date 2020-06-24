@@ -16,8 +16,6 @@ public class MangalistService {
         this.mangaRepository = mangaRepository;
     }
     
-    
-    
     public List<Manga> buscarDestacados(){
         List<Manga> destacados = mangaRepository.buscarTodos();
         return  destacados;
@@ -30,4 +28,9 @@ public class MangalistService {
     public List<Manga> buscador (String consulta){
         return mangaRepository.findByNombreContaining(consulta);
     }
+    
+    public Manga guardar(Manga manga){
+        return mangaRepository.save(manga);
+    }
+    
 }

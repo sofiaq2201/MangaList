@@ -3,6 +3,14 @@
     "attributes": {
         "th:text": {},
         "th:src": {},
-        "th:each": {}
+        "th:action": {
+            "context": "form"
+        },
+        "th:each": {},
+        "th:href": {},
+        "th:field": {},
+        "th:value": {
+            "context": "option"
+        }
     }
 }
