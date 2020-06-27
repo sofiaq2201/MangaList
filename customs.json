@@ -2,6 +2,8 @@
     "elements": {},
     "attributes": {
         "th:text": {},
+        "th:object": {},
+        "th:id": {},
         "th:src": {},
         "th:action": {
             "context": "form"
@@ -11,6 +13,7 @@
         "th:field": {},
         "th:value": {
             "context": "option"
-        }
+        },
+        "th:attr": {}
     }
 }

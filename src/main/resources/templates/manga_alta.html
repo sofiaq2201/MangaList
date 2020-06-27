@@ -26,6 +26,7 @@
             <div class="row mt-4">
                 <div class="col col-md-12">
                     <form method="POST" th:action="@{/manga/guardar}" th:object="${manga}">
+                        <input type="hidden" th:field="*{id}" id="id" name="id">
                         <div class="form-group row">
                             <label for="nombre" class="col-4 col-form-label">Nombre</label> 
                             <div class="col-12">

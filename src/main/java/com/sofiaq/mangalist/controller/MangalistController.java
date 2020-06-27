@@ -31,8 +31,7 @@ public class MangalistController {
         model.addAttribute("mangas", listado);
         return "index";
     }
-    
-    @RequestMapping("/buscar")
+     @RequestMapping("/buscar")
     public String busqueda(@RequestParam("q") String consulta, Model model){
         List<Manga> busqueda = mangaService.buscador(consulta);
         model.addAttribute("mangas", busqueda);
