@@ -19,10 +19,7 @@ public class MangaABMController {
         this.autorService = autorService;
         this.mangaService = mangaService;
     }
-
-  
     
-       
     //form de alta de mangas
     @RequestMapping("/manga/alta")
     public String mangaAlta(Model model){
@@ -31,10 +28,27 @@ public class MangaABMController {
         return "manga_alta";
     }
     
-    @PostMapping("/manga/guardar")
+    //edicion de manga
+     @RequestMapping("/manga/editar")
+     public String mangaEditar(int mangaId, Model model){
+         Manga m = mangaService.mangaInfo(mangaId);
+         model.addAttribute("autores", autorService.buscarTodos());
+         model.addAttribute("manga", m);
+         
+         return "manga_alta";
+     }
+     
+     @PostMapping("/manga/guardar")
     public String guardar(Manga manga){
         mangaService.guardar(manga);
         return "redirect:/";
     }
     
+    //eliminar Manga
+    @RequestMapping("/manga/eliminar")
+    public String mangaEliminar(int mangaId){
+        Manga m = mangaService.mangaInfo(mangaId);
+        mangaService.mangaDelete(m);
+        return "redirect:/";
+    }
 }
