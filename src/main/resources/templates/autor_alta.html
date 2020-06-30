@@ -30,7 +30,9 @@
 
             <div class="row mt-4">
                 <div class="col col-md-12">
-                    <form method="POST" th:action="@{/manga/guardar}" th:object="${manga}">
+                    <h1>Agregar autor</h1>
+                    <form method="POST" th:action="@{/autor/guardar}" th:object="${autor}">
+                        
                         <input type="hidden" th:field="*{id}" id="id" name="id">
                         <div class="form-group row">
                             <label for="nombre" class="col-4 col-form-label">Nombre</label> 
@@ -38,35 +40,12 @@
                                 <input id="nombre" name="nombre" th:field="*{nombre}" type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="selectautores">Autor</label>
-                            <select class="form-control" id="selectautores" th:field="*{autor.id}">
-                                <option th:each="autor: ${autores}" th:text="${autor.nombre}"  th:value="${autor.id}"></option>
-                            </select>
-                        </div>
-                        <div class="form-group row">
-                            <label for="descripcion" class="col-4 col-form-label">Descripcion</label> 
-                            <div class="col-12">
-                                <textarea class="form-control" th:field="*{descripcion}" id="descripcion" name="descripcion" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="imagen_url" class="col-4 col-form-label">Imagen URL</label> 
-                            <div class="col-12">
-                                <input id="imagen_url" th:field="*{imagenUrl}" name="imagen_url" type="text" class="form-control">
-                            </div>
-                        </div> 
-
-                        <button name="submit" type="submit" class="btn btn-primary">Subir Manga</button>
+                        <button name="submit" type="submit" class="btn btn-primary">Subir autor</button>
 
                     </form>
                 </div>
             </div>     
-
-
         </div>
-
-
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -13,5 +13,8 @@ public interface AutorRepository extends JpaRepository<Autor, Integer>{
     
     @Query("from Autor a order by a.nombre ")
     List<Autor> buscarTodosAutores();
+    
+    @Query("from Autor a where a.id = ?1")
+    Autor findById(int autorId);
 }
 

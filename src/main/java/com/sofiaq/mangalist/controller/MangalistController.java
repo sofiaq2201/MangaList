@@ -1,6 +1,7 @@
 package com.sofiaq.mangalist.controller;
 
 import com.sofiaq.mangalist.domain.Manga;
+import com.sofiaq.mangalist.service.AutorService;
 import com.sofiaq.mangalist.service.MangalistService;
 import java.util.List;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MangalistController {
 
     public final MangalistService mangaService;
+    public final AutorService autorService;
 
-    public MangalistController(MangalistService mangaService) {
+    public MangalistController(MangalistService mangaService, AutorService autorService) {
         this.mangaService = mangaService;
+        this.autorService = autorService;
     }
+    
 
     @RequestMapping("/")
     public String listarMangas(Model model) {
@@ -36,6 +40,12 @@ public class MangalistController {
         List<Manga> busqueda = mangaService.buscador(consulta);
         model.addAttribute("mangas", busqueda);
         return "index";
+    }
+    
+    @RequestMapping("/autor/listado")
+    public String listarAutores(Model model){
+        model.addAttribute("autores", autorService.buscarTodos());
+        return "autores_listado";
     }
 
 }

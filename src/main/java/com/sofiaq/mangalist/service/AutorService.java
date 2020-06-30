@@ -18,7 +18,17 @@ public class AutorService {
         return autorRepository.buscarTodosAutores();
     }
     
+    public Autor guardar(Autor autor){
+        return autorRepository.save(autor);
+    }
     
+    public Autor autorInfo(int autorId){
+        return autorRepository.findById(autorId);
+    }
+    
+    public void eliminarAutor(Autor autor){
+       autorRepository.delete(autor);
+    }
     
     
     

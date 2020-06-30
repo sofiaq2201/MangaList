@@ -16,10 +16,15 @@
                 <img src="https://img.icons8.com/dusk/64/000000/book-shelf.png" width="30" height="30" class="d-inline-block align-top" alt="">
                 MangaList
             </a>
-            <form th:action="@{/buscar}" class="form-inline">
-                <input name="q" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/autor/listado}">Autores </a>
+                </li>
+            </ul>
+                <form th:action="@{/buscar}" class="form-inline">
+                    <input name="q" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
         </nav>
 
         <div class="container mangas-destacados mt-4">
@@ -57,7 +62,7 @@
                                         <div class="modal-body">
                                             <p th:text="${manga.descripcion}"></p>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>

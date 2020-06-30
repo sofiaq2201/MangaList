@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="css/style.css" >
+        <title>MangaList</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" th:href="@{/}">
+                <img src="https://img.icons8.com/dusk/64/000000/book-shelf.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                MangaList
+            </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/autor/listado}">Autores </a>
+                </li>
+            </ul>
+            <form th:action="@{/buscar}" class="form-inline">
+                <input name="q" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </nav>
+        <div class="container ">
+            <div class="row mt-4">
+                <div class="col-md-8"><h1>Autores</h1></div>
+                <div class="col-md-4 text-right"><a th:href="@{/autor/alta}" class="btn btn-outline-info"> Subir autor </a></div>
+            </div>
+            <div class="row mt-2">
+
+                <div class="col">
+                    
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Eliminar</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="autor : ${autores}">
+                                <th th:text="${autor.nombre}" scope="row"></th>
+                                <td> <a th:href="@{/autor/editar(autorId=${autor.id})}" class="btn btn-sm btn-warning" >Editar</a></td>
+                                <td><a th:href="@{/autor/eliminar(autorId=${autor.id})}" class="btn btn-sm btn-danger btn-eliminar" >Eliminar</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+    </body>
+</html>
