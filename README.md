@@ -5,5 +5,9 @@
 
 ## Tecnologias
 + Java
-+ Spring Boot; Spring Web, Spring Data JPA, H2, Thymeleaf, devtool. 
-+ MVC 
++ Spring Boot; Spring Web, Spring Data JPA, H2, devtool. 
++ MySQL
++ Thymeleaf
++ HTML; CSS; Bootstrap
+----
+Patrón MVC 
